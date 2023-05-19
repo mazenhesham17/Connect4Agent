@@ -76,20 +76,3 @@ def is_goal(board):
             if player:
                 return player
     return 0
-
-
-if __name__ == '__main__':
-    playground = make_2d(ROW, COLUMN)
-    lst = [[1, 0, 1, 0, 0, 0, 1],
-           [0, 1, 0, 1, 0, 1, 0],
-           [0, 0, 1, 0, 1, 0, 0],
-           [0, 0, 0, 1, 2, 1, 0],
-           [0, 0, 1, 2, 1, 0, 0],
-           [0, 1, 2, 2, 1, 1, 0]]
-    # for i in range(ROW)[::-1]:
-    for i in range(ROW):
-        for j in range(COLUMN):
-            print(check_diagonal(lst, i, j), end=" ")
-        print('\n')
-    print(check_horizontal(lst))
-    print(playground)
