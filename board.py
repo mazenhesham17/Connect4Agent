@@ -46,7 +46,7 @@ class Board:
         for i in range(0, 7):
             for j in range(0, 6):
                 x = startCord[0] + i * 115
-                y = startCord[1] + j * 112
+                y = startCord[1] + j * 113
                 cordArr.append((x, y))
         return cordArr
 
@@ -93,4 +93,7 @@ class Board:
         pyautogui.click(
             self._get_grid_cordinates()[column*6][0] + LEFT,
             self._get_grid_cordinates()[column][0] + TOP,
+        )
+        pyautogui.click(
+            LEFT,TOP
         )

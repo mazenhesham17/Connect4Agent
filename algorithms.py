@@ -6,9 +6,6 @@ from move import put
 
 import math
 import random
-import sys
-ROW = 6
-COLUMN = 7
 
 def minimax(playground,player,depth):
     if is_goal(playground):
@@ -31,7 +28,7 @@ def minimax(playground,player,depth):
             if idx != -1:
                 res=minimax(playground,2,depth-1)[1]
                 playground[idx][c] = 0
-                if res > val:
+                if res >= val:
                     val=res
                     col=c
         return col,val
@@ -46,7 +43,7 @@ def minimax(playground,player,depth):
             if idx != -1:
                 res = minimax(playground, 1,depth-1)[1]
                 playground[idx][c]=0
-                if res < val:
+                if res <= val:
                     val = res
                     col = c
         return col, val

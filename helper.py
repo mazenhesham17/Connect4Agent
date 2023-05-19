@@ -1,4 +1,5 @@
 from constants import ROW, COLUMN, dx, dy
+from random import shuffle
 
 
 def make_2d(n, m):
@@ -16,6 +17,8 @@ def valid_cols(boards):
     for i in range(COLUMN):
         if boards[0][i] == 0:
             lst.append(i)
+    if len(lst) != 0:
+        shuffle(lst)
     return lst
 
 def check_4(board, i, j, di, dj):

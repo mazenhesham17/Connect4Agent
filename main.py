@@ -13,6 +13,7 @@ def main(algorithm, difficulty):
 
     time.sleep(2)
     game_end = False
+    cnt = 0
     while not game_end:
         (game_board, game_end) = board.get_game_grid()
 
@@ -24,23 +25,23 @@ def main(algorithm, difficulty):
         if algorithm == 0:
             # 0 is depth 1 , 1 is depth 3 , 2 is depth 5
             if difficulty == 0:
-                column, val = minimax(game_board, 1, 1)
+                column, val = minimax(game_board, 1, 1 + cnt//12 )
             elif difficulty == 1:
-                column, val = minimax(game_board, 1, 3)
+                column, val = minimax(game_board, 1, 3 + cnt//12)
             else:
-                column, val = minimax(game_board, 1, 5)
+                column, val = minimax(game_board, 1, 5 + cnt//12)
         else:
             # 0 is depth 2 , 1 is depth 4 , 2 is depth 6
             if difficulty == 0:
-                column, val = minimax_alphabeta(game_board, 1, -10000000000000, 10000000000000, 2)
+                column, val = minimax_alphabeta(game_board, 1, -10000000000000, 10000000000000, 2 + cnt//10)
             elif difficulty == 1:
-                column, val = minimax_alphabeta(game_board, 1, -10000000000000, 10000000000000, 4)
+                column, val = minimax_alphabeta(game_board, 1, -10000000000000, 10000000000000, 4 + cnt//10)
             else:
-                column, val = minimax_alphabeta(game_board, 1, -10000000000000, 10000000000000, 8)
+                column, val = minimax_alphabeta(game_board, 1, -10000000000000, 10000000000000, 6 + cnt//10)
 
         board.select_column(column)
-
-        time.sleep(4)
+        cnt += 1
+        time.sleep(6)
 
 
 if __name__ == "__main__":
