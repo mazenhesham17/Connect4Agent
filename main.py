@@ -17,6 +17,7 @@ def main(algorithm, difficulty):
         (game_board, game_end) = board.get_game_grid()
 
         # FOR DEBUG PURPOSES
+        print(game_board)
         board.print_grid(game_board)
 
         # 0 is minimax , 1 is alpha beta
@@ -35,7 +36,7 @@ def main(algorithm, difficulty):
             elif difficulty == 1:
                 column, val = minimax_alphabeta(game_board, 1, -10000000000000, 10000000000000, 4)
             else:
-                column, val = minimax_alphabeta(game_board, 1, -10000000000000, 10000000000000, 6)
+                column, val = minimax_alphabeta(game_board, 1, -10000000000000, 10000000000000, 8)
 
         board.select_column(column)
 

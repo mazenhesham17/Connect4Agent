@@ -32,7 +32,7 @@ class Board:
             for j in range(0, len(grid[i])):
                 if grid[i][j] == (255, 255, 255):
                     grid[i][j] = EMPTY
-                elif grid[i][j] == (48, 80, 203):
+                elif grid[i][j] == (48, 80, 203) or grid[i][j] == (47, 78, 201):
                     grid[i][j] = BLUE
                 elif grid[i][j][0] > 200:
                     grid[i][j] = RED
