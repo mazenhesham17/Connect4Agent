@@ -32,6 +32,8 @@ class Board:
             for j in range(0, len(grid[i])):
                 if grid[i][j] == (255, 255, 255):
                     grid[i][j] = EMPTY
+                elif grid[i][j] == (48, 80, 203):
+                    grid[i][j] = BLUE
                 elif grid[i][j][0] > 200:
                     grid[i][j] = RED
                 elif grid[i][j][0] > 50:
@@ -46,16 +48,6 @@ class Board:
                 x = startCord[0] + i * 115
                 y = startCord[1] + j * 112
                 cordArr.append((x, y))
-        return cordArr
-
-    def _get_grid_cordinates_modified(self):
-        startCord = (50, 55)
-        cordArr = []
-        for i in range(0, 7):
-            for j in range(0, 6):
-                x = startCord[0] + i * 115
-                y = startCord[1] + j * 112
-                cordArr.append([x, y])
         return cordArr
 
     def _transpose_grid(self, grid):

@@ -28,7 +28,7 @@ def main():
         print(random_column)
         board.select_column(random_column)
 
-        time.sleep(2)
+        time.sleep(4)
 
 
 if __name__ == "__main__":
