@@ -16,32 +16,30 @@ def main(algorithm, difficulty):
     cnt = 0
     while not game_end:
         (game_board, game_end) = board.get_game_grid()
-
+        if game_end:
+            break
         # FOR DEBUG PURPOSES
-        print(game_board)
-        board.print_grid(game_board)
+        # print(game_board)
+        # board.print_grid(game_board)
 
-        # 0 is minimax , 1 is alpha beta
         if algorithm == 0:
-            # 0 is depth 1 , 1 is depth 3 , 2 is depth 5
             if difficulty == 0:
-                column, val = minimax(game_board, 1, 1 + cnt//12 )
+                column, val = minimax(game_board, 1, 1 + cnt//7)
             elif difficulty == 1:
-                column, val = minimax(game_board, 1, 3 + cnt//12)
+                column, val = minimax(game_board, 1, 3 + cnt//7)
             else:
-                column, val = minimax(game_board, 1, 5 + cnt//12)
+                column, val = minimax(game_board, 1, 5 + cnt//7)
         else:
-            # 0 is depth 2 , 1 is depth 4 , 2 is depth 6
             if difficulty == 0:
-                column, val = minimax_alphabeta(game_board, 1, -10000000000000, 10000000000000, 2 + cnt//10)
+                column, val = minimax_alphabeta(game_board, 1, -10000000000000, 10000000000000, 3 + cnt//7)
             elif difficulty == 1:
-                column, val = minimax_alphabeta(game_board, 1, -10000000000000, 10000000000000, 4 + cnt//10)
+                column, val = minimax_alphabeta(game_board, 1, -10000000000000, 10000000000000, 5 + cnt//7)
             else:
-                column, val = minimax_alphabeta(game_board, 1, -10000000000000, 10000000000000, 6 + cnt//10)
+                column, val = minimax_alphabeta(game_board, 1, -10000000000000, 10000000000000, 7 + cnt//7)
 
         board.select_column(column)
         cnt += 1
-        time.sleep(6)
+        time.sleep(3.5)
 
 
 if __name__ == "__main__":

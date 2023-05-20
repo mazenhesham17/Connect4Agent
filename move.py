@@ -1,4 +1,6 @@
-from constants import ROW, COLUMN
+from constants import ROW
+
+
 def put(board, col, player):
     for i in range(ROW)[::-1]:
         if board[i][col] == 0:

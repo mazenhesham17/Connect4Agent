@@ -46,7 +46,7 @@ class Board:
         for i in range(0, 7):
             for j in range(0, 6):
                 x = startCord[0] + i * 115
-                y = startCord[1] + j * 113
+                y = startCord[1] + j * 112
                 cordArr.append((x, y))
         return cordArr
 
